@@ -1,0 +1,4 @@
+project=address_tokenizer
+architecture=container
+test=minitest
+template=erb
