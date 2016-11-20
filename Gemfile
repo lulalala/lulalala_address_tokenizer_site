@@ -3,6 +3,10 @@ source 'https://rubygems.org'
 gem 'lulalala_address_tokenizer'
 gem 'google_drive'
 
+gem 'mina', '~> 0.3.8'
+gem 'mina-puma', require:false
+gem 'puma'
+
 gem 'hanami-bootstrap'
 
 gem 'bundler'
