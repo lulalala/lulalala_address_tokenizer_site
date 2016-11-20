@@ -1,0 +1,29 @@
+<h1>Lulalala Address Tokenizer 中文地址分析</h1>
+
+<p>
+  依靠機械學習訓練做台灣地址分析<br>
+  理論上日語韓語等沒有空格字元隔開詞的地址也分別訓練模型做地址分析
+</p>
+
+<%=
+  form_for :address, routes.parse_path do
+    text_field :address, placeholder: "地址"
+
+    submit '分析'
+  end
+%>
+
+<h2>運作原理</h2>
+<p>
+  本網站使用由<a href="https://wapiti.limsi.fr/">Wapiti</a>訓練出來的模型做地址分詞。背後的原理請見<a href="https://zh.wikipedia.org/wiki/%E6%A2%9D%E4%BB%B6%E9%9A%A8%E6%A9%9F%E5%9F%9F">條件隨機域</a>。訓練資料主要來自<a href="http://www.openstreetmap.org">OpenStreetMap</a>
+</p>
+
+<p>
+  Wapiti 是個 C 的程式庫，所以能夠使用 C 的環境就能使用它產生的模型。<br>
+  <a href="https://github.com/lulalala/lulalala_address_tokenizer">lulalala_address_tokenizer</a> 是個包裝此的 Ruby gem。
+</p>
+
+<h2>訓練好的模型檔</h2>
+<ul>
+  <li><a href="2016-11-20.mod">2016-11-20</a></li>
+</ul>

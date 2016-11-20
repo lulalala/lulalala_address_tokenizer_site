@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Web</title>
+    <title>中文地址分析</title>
+    <%= stylesheet 'bootstrap' %>
+    <%= javascript 'bootstrap' %>
     <%= favicon %>
   </head>
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Lulalala Address Tokenizer</a>
+        </div>
+        <!--<div id="navbar" class="collapse navbar-collapse">-->
+          <!--<ul class="nav navbar-nav">-->
+            <!--<li class="active"><a href="/"></a></li>-->
+          <!--</ul>-->
+        <!--</div>-->
+      </div>
+    </nav>
+
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

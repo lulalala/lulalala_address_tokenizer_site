@@ -1,0 +1,34 @@
+<h1>分詞結果</h1>
+
+<dl class="dl-horizontal">
+  <% result.each do |key, value| %>
+    <dt><%= ::ATTRIBUTE_NAMES_IN_CHINESE[key.to_sym] %></dt>
+    <dd><%= value %></dd>
+  <% end %>
+</dl>
+
+<div class="alert alert-info">
+  如果錯了，請告訴我們正確的地址：
+</div>
+
+<%=
+  form_for :address, routes.report_path do
+    div class:'form-group row' do
+      label '完整地址', for: :complete, class:'col-sm-1 col-form-label'
+      div class:'col-sm-11' do
+        text_field :complete, class: 'form-control'
+      end
+    end
+
+    ::ATTRIBUTE_NAMES_IN_CHINESE.each do |attr, chinese|
+      div class:'form-group row' do
+        label chinese, for: attr, class:'col-sm-1 col-form-label'
+        div class:'col-sm-11' do
+          text_field attr, class: 'form-control'
+        end
+      end
+    end
+
+    submit '送出', class:'btn btn-default'
+  end
+%>

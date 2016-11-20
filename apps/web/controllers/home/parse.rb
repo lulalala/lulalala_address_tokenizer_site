@@ -1,0 +1,24 @@
+require 'lulalala_address_tokenizer'
+
+ATTRIBUTE_NAMES_IN_CHINESE = {
+  city: '縣市',
+  district: '鄉鎮市區',
+  subdistrict: '村里',
+  street: '路',
+  xiang: '巷',
+  nong: '弄',
+  housenumber: '號碼'
+}
+
+module Web::Controllers::Home
+  class Parse
+    include Web::Action
+
+    expose :result
+
+    def call(params)
+      t = LulalalaAddressTokenizer.new("address.mod")
+      @result = t.parse(params[:address][:address])
+    end
+  end
+end
