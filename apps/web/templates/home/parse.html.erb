@@ -14,9 +14,9 @@
 <%=
   form_for :address, routes.report_path do
     div class:'form-group row' do
-      label '完整地址', for: :complete, class:'col-sm-1 col-form-label'
+      label '完整地址', for: :full, class:'col-sm-1 col-form-label'
       div class:'col-sm-11' do
-        text_field :complete, class: 'form-control'
+        text_field :full, class: 'form-control'
       end
     end
 

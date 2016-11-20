@@ -5,3 +5,4 @@
 # get '/hello', to: ->(env) { [200, {}, ['Hello from Hanami!']] }
 root to: 'home#index'
 post '/parse', to: 'home#parse', name: :parse
+post '/report', to: 'home#report', name: :report

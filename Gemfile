@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'lulalala_address_tokenizer'
+gem 'google_drive'
 
 gem 'hanami-bootstrap'
 
