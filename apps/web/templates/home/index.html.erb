@@ -6,7 +6,7 @@
 </p>
 
 <%=
-  form_for :address, routes.parse_path do
+  form_for :address, routes.parse_path, method:'GET' do
     text_field :address, placeholder: "地址", style:'width: 70%'
 
     submit '分析'
