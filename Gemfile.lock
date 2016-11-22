@@ -118,7 +118,7 @@ GEM
     logging (2.1.0)
       little-plugger (~> 1.1)
       multi_json (~> 1.10)
-    lulalala_address_tokenizer (0.1.0)
+    lulalala_address_tokenizer (0.1.1)
       wapiti
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
@@ -207,7 +207,7 @@ DEPENDENCIES
   hanami-bootstrap
   hanami-helpers
   hanami-model (~> 0.7)
-  lulalala_address_tokenizer
+  lulalala_address_tokenizer (~> 0.1.1)
   mina (~> 0.3.8)
   mina-puma
   minitest

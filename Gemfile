@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'lulalala_address_tokenizer'
+gem 'lulalala_address_tokenizer', '~> 0.1.1'
 gem 'google_drive'
 
 gem 'mina', '~> 0.3.8'
