@@ -70,6 +70,7 @@ task :deploy => :environment do
     invoke :'deploy:cleanup'
     to :launch do
       invoke :'puma:restart'
+      queue %{cd #{deploy_to}/#{current_path} && bundle exec hanami assets precompile}
     end
   end
 end
