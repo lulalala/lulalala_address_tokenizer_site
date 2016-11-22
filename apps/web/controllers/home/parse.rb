@@ -23,7 +23,9 @@ module Web::Controllers::Home
       @result = t.parse(params[:address][:address])
 
       ::File.open('log/addresses.txt', 'a') do |f|
-        f << ", \n" + @result.to_hash.to_json
+        hash = @result.to_hash.clone
+        hash[:full] = params[:address][:address]
+        f << ", \n" + hash.to_json
       end
     end
   end
