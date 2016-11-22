@@ -7,6 +7,8 @@ gem 'mina', '~> 0.3.8'
 gem 'mina-puma', require:false
 gem 'puma'
 
+gem 'byebug'
+
 gem 'hanami-bootstrap'
 
 gem 'bundler'
