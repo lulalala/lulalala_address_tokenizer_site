@@ -1,9 +1,11 @@
 <h1>分詞結果</h1>
 
 <dl class="dl-horizontal">
-  <% result.each do |key, value| %>
-    <dt><%= ::ATTRIBUTE_NAMES_IN_CHINESE[key.to_sym] %></dt>
-    <dd><%= value %></dd>
+  <% ::ATTRIBUTE_NAMES_IN_CHINESE.each do |attr, attr_chinese| %>
+    <dt><%= attr_chinese %></dt>
+    <dd>
+      <%= result[attr.to_s] %>
+    </dd>
   <% end %>
 </dl>
 
