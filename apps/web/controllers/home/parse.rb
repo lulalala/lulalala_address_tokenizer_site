@@ -21,6 +21,10 @@ module Web::Controllers::Home
     def call(params)
       t = LulalalaAddressTokenizer.new("address.mod")
       @result = t.parse(params[:address][:address])
+
+      ::File.open('log/addresses.txt', 'a') do |f|
+        f << @result.to_hash.to_json
+      end
     end
   end
 end
