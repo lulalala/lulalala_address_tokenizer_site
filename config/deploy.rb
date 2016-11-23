@@ -21,7 +21,7 @@ set :term_mode, nil
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, ['google_account.json', 'address.mod', 'log', 'tmp/pids', 'tmp/sockets', 'public/assets', 'public/assets.json', 'tmp/addresses.txt']
+set :shared_paths, ['google_account.json', 'address.mod', 'log', 'tmp/pids', 'tmp/sockets', 'public/assets', 'public/models', 'public/assets.json', 'tmp/addresses.txt']
 
 # Optional settings:
 set :user, 'deploy'    # Username in the server to SSH to.
@@ -45,6 +45,9 @@ end
 task :setup => :environment do
   queue! %[mkdir -p "#{deploy_to}/#{shared_path}/public/assets"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/public/assets"]
+
+  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/public/models"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/public/models"]
 
   queue! %[mkdir -p "#{deploy_to}/#{shared_path}/log"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/log"]
