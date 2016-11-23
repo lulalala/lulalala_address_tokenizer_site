@@ -3,11 +3,7 @@ source 'https://rubygems.org'
 gem 'lulalala_address_tokenizer', '~> 0.1.1'
 gem 'google_drive'
 
-gem 'mina', '~> 0.3.8'
-gem 'mina-puma', require:false
 gem 'puma'
-
-gem 'byebug'
 
 gem 'hanami-bootstrap'
 
@@ -23,6 +19,9 @@ group :development do
   # Code reloading
   # See: http://hanamirb.org/guides/projects/code-reloading
   gem 'shotgun'
+  gem 'mina', '~> 0.3.8'
+  gem 'mina-puma', require:false
+  gem 'byebug'
 end
 
 group :test, :development do
