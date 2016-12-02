@@ -14,12 +14,16 @@
   ＊在街道後面的文字目前一律視為號碼，因為沒有這些比較沒有標準，所以目前不算是錯誤。
 </div>
 
+<br/>
+<br/>
+<br/>
+
 <%=
   form_for :address, routes.report_path do
     div class:'form-group row' do
       label '完整地址', for: :full, class:'col-sm-1 col-form-label'
       div class:'col-sm-11' do
-        text_field :full, class: 'form-control'
+        text_field :full, class: 'form-control', value: params[:address][:address]
       end
     end
 
@@ -27,7 +31,7 @@
       div class:'form-group row' do
         label chinese, for: attr, class:'col-sm-1 col-form-label'
         div class:'col-sm-11' do
-          text_field attr, class: 'form-control'
+          text_field attr, class: 'form-control', value: result[attr.to_s]
         end
       end
     end
